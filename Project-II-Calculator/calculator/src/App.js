@@ -10,28 +10,76 @@ export default class App extends React.Component {
 
     this.state = {
       numberToOperate: 0,
-      selectingNumber: [0],
-      currentOperation: null,
+      currentOperation: -1,
+      currentDisplay:0,
+      isChangeDisplay:false,
+      isNegative:1,
     }
     
   }
   collectNumber(num) {
-    const newCNum = this.state.selectingNumber.concat(num);
-    this.setState({selectingNumber: newCNum});
+    if(this.state.isChangeDisplay) {
+      this.setState({ 
+        currentDisplay: num,
+        isChangeDisplay: false,
+      });
+    }else {
+      const newCNum = this.state.currentDisplay * 10 + num;
+      this.setState({ currentDisplay: newCNum});
+    }
   }
 
   collectOperator(operator) {
-    this.setState({currentOperation: operator}, () =>  console.log(this.state.currentOperation));
+    
+    if(this.state.currentOperation === -1){
+      this.setState({
+        currentOperation: operator,
+        numberToOperate: this.state.currentDisplay,
+        isChangeDisplay: true,
+      });
+    } else {
+      this.calculate()
+      this.setState({
+        currentOperation: operator,
+        isChangeDisplay : true,
+      });
+
+    }
+  
   }
 
-  updateDisplay() {
-
+  calculate(){
+    const math_it_up = {
+      '+': function (x, y) { return x + y },
+      '-': function (x, y) { return x - y },
+      '÷': function (x, y) { return x / y},
+      'x': function (x, y) { return x * y},
+    };
+    console.log(this.state.isNegative, "prev number")
+    const prevNum = this.state.currentDisplay * this.state.isNegative;
+    console.log(this.state.currentDisplay, "display number")
+    const calcVal = math_it_up[this.state.currentOperation](this.state.numberToOperate, prevNum );
+    console.log(calcVal);
+    if (calcVal<0){
+      this.setState({
+        isNegative:-1
+      })
+    }else{
+      this.setState(
+        {isNegative:1}
+      )
+    }
+    this.setState({
+      currentDisplay: calcVal,
+      numberToOperate: calcVal,
+    });
   }
+  
 
   render() {
     return (
       <div className="calculator-container">
-        <CalculatorDisplay curVal={parseInt(this.state.selectingNumber.join(''))} />
+        <CalculatorDisplay curVal={this.state.currentDisplay} />
         <div className="clear-number-container">
           <ActionButton buttonStyle= "num-button" text="clear" />
           <NumbersContainer collectNumber={this.collectNumber.bind(this)} />
