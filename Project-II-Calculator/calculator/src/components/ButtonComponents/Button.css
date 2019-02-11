@@ -12,7 +12,7 @@
 }
 .operation-button{
     width: 100%;
-    background: red;
+    background: rgb(160, 0, 30);
     color:white;
     font-size: 70px;
 }
@@ -20,6 +20,6 @@
 .number-button,
 .large-button {
     height: 95px;
-    border: 1px solid gray;
+    border: 1.5px solid gray;
     
 }
