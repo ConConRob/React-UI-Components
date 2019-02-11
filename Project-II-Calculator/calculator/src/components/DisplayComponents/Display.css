@@ -2,7 +2,9 @@
     text-align: right;
     background: rgb(54, 54, 54);
     color: white;
-    font-size: 30px;
+    font-size: 70px;
     padding: 10px 10px;
     border: 1px solid gray;
+    height: 104px;
+    line-height: 104px;
 }

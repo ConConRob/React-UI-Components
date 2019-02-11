@@ -1,5 +1,6 @@
 .calculator-container{
-    width: 450px;
+    width: 455px;
+    margin: 20px auto;
 }
 
 .clear-number-container{
