@@ -1,0 +1,25 @@
+.large-button {
+    width:100%;
+}
+.number-button{
+    width: 33.33%;
+}
+.large-button,
+.number-button{
+    color: black;
+    background: white;
+    font-size: 45px;
+}
+.operation-button{
+    width: 100%;
+    background: red;
+    color:white;
+    font-size: 70px;
+}
+.operation-button,
+.number-button,
+.large-button {
+    height: 95px;
+    border: 1px solid gray;
+    
+}
