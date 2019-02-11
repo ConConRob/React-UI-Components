@@ -4,8 +4,19 @@
 .number-button{
     width: 33.33%;
 }
+.large-button,
+.number-button{
+    color: black;
+    background: white;
+}
 .operation-button{
     width: 100%;
     background: red;
     color:white;
+}
+.operation-button,
+.number-button,
+.large-button {
+    height: 70px;
+    border: 1px solid gray;
 }
