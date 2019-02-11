@@ -1,0 +1,9 @@
+.numbers-container{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    width:100%;
+}
+.operations-container {
+    width: 25%;
+    float: left;
+}

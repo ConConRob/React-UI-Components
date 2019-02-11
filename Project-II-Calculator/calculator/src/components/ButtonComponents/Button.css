@@ -1,0 +1,11 @@
+.large-button {
+    width:100%;
+}
+.number-button{
+    width: 33.33%;
+}
+.operation-button{
+    width: 100%;
+    background: red;
+    color:white;
+}
