@@ -1,1 +1,10 @@
 /* All styles for your Card Components live here */
+.card-content-container {
+    width: 100%;
+}
+.card-container:hover{
+    cursor: pointer;
+}
+.card-image{
+    width: 100%
+}
