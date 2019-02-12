@@ -9,12 +9,21 @@
     color: black;
     background: white;
     font-size: 45px;
+    
+}
+.large-button:hover,
+.general-button:hover{
+    cursor: pointer;
+    background: rgb(206, 206, 206);
 }
 .operation-button{
     width: 100%;
     background: rgb(160, 0, 30);
     color:white;
     font-size: 70px;
+}
+.operation-button:hover{
+    background: rgb(114, 0, 21);
 }
 .operation-button,
 .general-button,
