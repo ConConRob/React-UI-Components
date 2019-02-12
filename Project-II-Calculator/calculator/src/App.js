@@ -13,7 +13,6 @@ export default class App extends React.Component {
       currentOperation: -1,
       currentDisplay:0,
       isChangeDisplay:false,
-      isNegative:1,
     }
     
   }
@@ -30,8 +29,17 @@ export default class App extends React.Component {
   }
 
   collectOperator(operator) {
-    
-    if(this.state.currentOperation === -1){
+    if(operator==="="){
+      if(this.state.currentOperation === -1){
+        
+      }else{
+        this.calculate();
+        this.setState({
+          isChangeDisplay: true,
+          currentOperation: -1,
+        })
+      }
+    }else if(this.state.currentOperation === -1){
       this.setState({
         currentOperation: operator,
         numberToOperate: this.state.currentDisplay,
@@ -55,20 +63,7 @@ export default class App extends React.Component {
       '÷': function (x, y) { return x / y},
       'x': function (x, y) { return x * y},
     };
-    console.log(this.state.isNegative, "prev number")
-    const prevNum = this.state.currentDisplay * this.state.isNegative;
-    console.log(this.state.currentDisplay, "display number")
-    const calcVal = math_it_up[this.state.currentOperation](this.state.numberToOperate, prevNum );
-    console.log(calcVal);
-    if (calcVal<0){
-      this.setState({
-        isNegative:-1
-      })
-    }else{
-      this.setState(
-        {isNegative:1}
-      )
-    }
+    const calcVal = math_it_up[this.state.currentOperation](this.state.numberToOperate, this.state.currentDisplay );
     this.setState({
       currentDisplay: calcVal,
       numberToOperate: calcVal,
