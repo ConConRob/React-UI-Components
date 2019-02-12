@@ -1,15 +1,15 @@
 import React from 'react';
 import './Containers.css';
-import NumberButton from '../ButtonComponents/NumberButton';
+import GeneralButton from '../ButtonComponents/GeneralButton';
 
-export default function OperationsContainer({collectOperator}) {
+export default function OperationsContainer({onClickFunction}) {
     return (
         <div className="operations-container">
-            <NumberButton getData={collectOperator} buttonStyle= "operation-button" text="÷" />
-            <NumberButton getData={collectOperator} buttonStyle= "operation-button" text="x" />
-            <NumberButton getData={collectOperator} buttonStyle= "operation-button" text="-" />
-            <NumberButton getData={collectOperator} buttonStyle= "operation-button" text="+" />
-            <NumberButton getData={collectOperator} buttonStyle= "operation-button" text="=" />
+            <GeneralButton onClickFunction={onClickFunction} buttonStyle= "operation-button" text="÷" />
+            <GeneralButton onClickFunction={onClickFunction} buttonStyle= "operation-button" text="x" />
+            <GeneralButton onClickFunction={onClickFunction} buttonStyle= "operation-button" text="-" />
+            <GeneralButton onClickFunction={onClickFunction} buttonStyle= "operation-button" text="+" />
+            <GeneralButton onClickFunction={onClickFunction} buttonStyle= "operation-button" text="=" />
         </div>
     )
 }

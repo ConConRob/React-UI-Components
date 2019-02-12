@@ -75,16 +75,25 @@ export default class App extends React.Component {
     });
   }
   
+  reset() {
+    this.setState({
+      numberToOperate: 0,
+      currentOperation: -1,
+      currentDisplay:0,
+      isChangeDisplay:false,
+      isNegative:1,
+    })
+  }
 
   render() {
     return (
       <div className="calculator-container">
         <CalculatorDisplay curVal={this.state.currentDisplay} />
         <div className="clear-number-container">
-          <ActionButton buttonStyle= "num-button" text="clear" />
-          <NumbersContainer collectNumber={this.collectNumber.bind(this)} />
+          <ActionButton onClickFunction={this.reset.bind(this)} buttonStyle= "num-button" text="clear" />
+          <NumbersContainer onClickFunction={this.collectNumber.bind(this)} />
         </div>
-      <OperationsContainer collectOperator={this.collectOperator.bind(this)} />
+      <OperationsContainer onClickFunction={this.collectOperator.bind(this)} />
       </div>
     );    
   }
