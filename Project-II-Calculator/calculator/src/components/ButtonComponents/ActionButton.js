@@ -1,7 +1,7 @@
 import React from 'react';
 import './Button.css';
-export default function ActionButton(props) {
+export default function ActionButton({onClickFunction, buttonStyle, text}) {
     return (
-        <button className={'large-button '+props.buttonStyle}>{props.text}</button>
+        <button onClick={() => onClickFunction(text)} className={'large-button '+buttonStyle}>{text}</button>
     );
 }

@@ -4,6 +4,7 @@ import ImageThumbnail from './ImageThumbnail.js';
 import HeaderTitle from './HeaderTitle.js';
 import HeaderContent from './HeaderContent.js';
 import CardContainer from "../CardComponents/CardContainer.js";
+import Footer from '../FooterComponents/Footer.js';
 export default function HeaderContainer() {
   return (
     <div className="header-container">
@@ -12,6 +13,7 @@ export default function HeaderContainer() {
         <HeaderTitle />
         <HeaderContent />
         <CardContainer />
+        <Footer />
       </div>
       
     </div>

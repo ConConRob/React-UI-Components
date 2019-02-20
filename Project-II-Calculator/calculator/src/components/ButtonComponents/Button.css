@@ -1,25 +1,34 @@
 .large-button {
     width:100%;
 }
-.number-button{
+.general-button{
     width: 33.33%;
 }
 .large-button,
-.number-button{
+.general-button{
     color: black;
     background: white;
     font-size: 45px;
+    
+}
+.large-button:hover,
+.general-button:hover{
+    cursor: pointer;
+    background: rgb(206, 206, 206);
 }
 .operation-button{
     width: 100%;
-    background: red;
+    background: rgb(160, 0, 30);
     color:white;
     font-size: 70px;
 }
+.operation-button:hover{
+    background: rgb(114, 0, 21);
+}
 .operation-button,
-.number-button,
+.general-button,
 .large-button {
     height: 95px;
-    border: 1px solid gray;
+    border: 1.5px solid gray;
     
 }
